@@ -3,6 +3,34 @@ import React, { useState } from "react";
 function Reminder() {
   const [toggle, setToggle] = useState(false);
 
+  const Reminders = [
+    {
+      name: "Bertie Yates",
+      age: 29,
+      image: "birthday1",
+    },
+    {
+      name: "Hester Hogan",
+      age: 32,
+      image: "birthday2",
+    },
+    {
+      name: "Larry Little",
+      age: 35,
+      image: "birthday3",
+    },
+    {
+      name: "Sean Walsh",
+      age: 34,
+      image: "birthday4",
+    },
+    {
+      name: "Lola Gardner",
+      age: 32,
+      image: "birthday5",
+    },
+  ];
+
   return (
     <div className='Reminder'>
       <main
@@ -17,51 +45,17 @@ function Reminder() {
             className='showcase-content'
             style={{ display: toggle && "none" }}
           >
-            <article>
-              <div>
-                <img src='/images/birthday1.jpg' alt='' />
-              </div>
-              <div>
-                <h4>Bertie Yates</h4>
-                <p>29 years</p>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src='/images/birthday2.jpg' alt='' />
-              </div>
-              <div>
-                <h4>Hester Hogan</h4>
-                <p>32 years</p>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src='/images/birthday3.jpg' alt='' />
-              </div>
-              <div>
-                <h4>Larry Little</h4>
-                <p>36 years</p>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src='/images/birthday4.jpg' alt='' />
-              </div>
-              <div>
-                <h4>3Sean Walsh</h4>
-                <p>34 years</p>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src='/images/birthday5.jpg' alt='' />
-              </div>
-              <div>
-                <h4>Lola Gardner</h4>
-                <p>29 years</p>
-              </div>
-            </article>
+            {Reminders.map((data) => (
+              <article>
+                <div>
+                  <img src={`/images/${data.image}.jpg`} alt='' />
+                </div>
+                <div>
+                  <h4>{data.name}</h4>
+                  <p>{data.age} years</p>
+                </div>
+              </article>
+            ))}
           </div>
           <button onClick={() => setToggle(true)}>clear all</button>
         </div>
