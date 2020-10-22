@@ -1,0 +1,74 @@
+$light-color: #f4f4f4;
+$box-shadow:  3px 3px 5px rgb(211, 209, 209), 
+-3px -3px 5px  rgb(211, 209, 209);
+// $primary-color: blue;
+$secondary-color: rgb(252, 140, 196);
+$font-stack: Arial, Helvetica, sans-serif;
+
+*{
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: $secondary-color;
+}
+
+.showcase{
+ height: 100%;
+ width: 35vw;
+ margin: 60px auto;
+ background-color: $light-color;
+ font-family: $font-stack;
+ box-shadow: $box-shadow;
+
+ article{
+     display: flex;
+     align-items: center;
+     padding: 15px ;
+
+     img{
+         border-radius: 50%;
+         width: 80px;
+         height: 80px;
+         display: block;
+     }
+
+     h4,p{
+         padding: 5px 5px 5px 15px;
+     }
+
+     p{
+         color: gray;
+     }
+ }
+ .para{
+     color: rgb(58, 57, 57);
+     padding: 5px 15px 20px 20px;
+     font-size: 28px;
+ }
+
+ button{
+     width: 90%;
+     height: 50px;
+     margin: 10px 2px 5px 10px;
+     text-transform: capitalize;
+     color: $light-color;
+     font-size: 20px;
+     border: none;
+     background-color: $secondary-color;
+
+     &:hover{
+      border-bottom-left-radius: 20px;
+      border-top-right-radius: 20px ;
+    }
+    &:focus{
+      outline: none;
+    }
+ }
+}
+
+.container{
+  padding: 20px 0 20px 20px;
+}
